@@ -1,5 +1,7 @@
 Config = {}
 
+Config.VersionCheck = true
+
 Config.Debug = false
 
 Config.CostMoney = true
