@@ -61,7 +61,7 @@ RegisterNetEvent('openmenu', function()
         },
         {
             id = 2,
-            header = "Receive Treetmwent",
+            header = "Receive Treatment",
             txt = "Cost: $" .. Config.BillAmount,
             params = {
                 event = "qphospital:StartTreatment",
