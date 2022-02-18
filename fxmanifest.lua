@@ -6,7 +6,7 @@ author 'qpr' -- https://github.com/ohqpr
 
 lua54 'yes'
 
-version '1.0.1'
+version '1.0.2'
 
 client_scripts {
   'client/*.lua'
