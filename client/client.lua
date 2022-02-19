@@ -27,7 +27,7 @@ CreateThread(function()
                 label = "Check In",
             },
         },
-        distance = 1.5
+        distance = 2.0
     })
 end)
 -------------------------------
