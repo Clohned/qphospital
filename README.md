@@ -22,4 +22,4 @@ Very simple hospital check-in script utilizing qtarget & nh-context. This was ma
 
 - Please be sure to report any bugs/errors you may run into --> [Report Issue](https://github.com/ohqpr/qphospital/issues)
 
-- If you have something to add improving the features, code, etc. Make a pull request --> [Pull Request](https://github.com/ohqpr/qphospital/pulls)
+- If you have something to add improving the features, code, etc. make a pull request --> [Pull Request](https://github.com/ohqpr/qphospital/pulls)
