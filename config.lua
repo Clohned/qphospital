@@ -2,6 +2,8 @@ Config = {}
 
 Config.VersionCheck = true
 
+Config.Notification = "You need medical attention!"
+
 Config.Debug = false
 
 Config.CostMoney = true
