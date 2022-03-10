@@ -1,4 +1,53 @@
 -------------------------------
+        -- Bleeding --
+-------------------------------
+local notification
+local effect = false
+
+function GetPed() return PlayerPedId() end
+function GetCar() return GetVehiclePedIsIn(PlayerPedId(),false) end
+
+function StartBleedEffect(ped)
+   SetEntityHealth(ped,GetEntityHealth(ped)-2)
+    if not effect then
+   StartScreenEffect('Rampage', 0, true)
+    effect = true
+end
+
+   SetTextFont(notification)
+   ShakeGameplayCam("SMALL_EXPLOSION_SHAKE", 1.0)
+   Bleeding(Config.Notification)
+   SetPlayerHealthRechargeMultiplier(PlayerId(), 0.0)
+   Wait(5000)
+end
+ 
+ function StopBleedEffect(ped)
+   effect = false
+   StopScreenEffect('Rampage')
+   SetPlayerHealthRechargeMultiplier(PlayerId(), 1.0)
+end
+ 
+ Citizen.CreateThread(function()
+  while true do
+   Wait(0)
+  local player = GetPlayerPed(-1)
+  local Health = GetEntityHealth(player)
+ 
+  if Health <= 140  then
+	 StartBleedEffect(player)
+ 
+  elseif Health > 150 then
+	StopBleedEffect(player)
+   end
+  end
+ end)
+  
+ function Bleeding(text)
+ SetNotificationTextEntry("STRING")
+ AddTextComponentString(text)
+ DrawNotification(false, false)
+ end
+-------------------------------
         -- NPC --
 -------------------------------
 CreateThread(function()
