@@ -1,24 +1,17 @@
 fx_version 'cerulean'
-
 game 'gta5'
+lua54 'yes'
 
 author 'qpr' -- https://github.com/ohqpr
 
-lua54 'yes'
+version '1.0.3'
 
-version '1.0.2'
-
-client_scripts {
-  'client/*.lua'
-}
+client_script 'client.lua'
+server_script 'server/*.lua'
 
 shared_scripts {
   '@es_extended/imports.lua',
   'config.lua'
-}
-
-server_scripts {
-  'server/*.lua'
 }
 
 dependencies {

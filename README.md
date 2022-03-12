@@ -1,12 +1,10 @@
 # qphospital (WIP)
 
-Very simple hospital check-in script utilizing qtarget & nh-context. This was made and tested on ["Ox" ESX](https://github.com/overextended/es_extended) but it should still work on all version's.
+Super simple hospital check-in resource utilizing qtarget & nh-context. This is still a work in progress and contains some test code (ex. Debug event).
 
 [Preview Video](https://www.youtube.com/watch?v=rNyuOtHWOZs)
 
 # Requirements
-
-- [ESX Legacy](https://github.com/overextended/esx-legacy)
 
 - [qtarget](https://github.com/overextended/qtarget)
 
@@ -20,6 +18,6 @@ Very simple hospital check-in script utilizing qtarget & nh-context. This was ma
 
 # Support
 
-- Please be sure to report any bugs/errors you may run into --> [Report Issue](https://github.com/ohqpr/qphospital/issues)
+- Please be sure to report any bugs/errors you may run into --> [Report Issue](https://github.com/ohqpr/qphospital/issues/new)
 
 - If you have something to add improving the features, code, etc. make a pull request --> [Pull Request](https://github.com/ohqpr/qphospital/pulls)

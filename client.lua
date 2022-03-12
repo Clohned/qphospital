@@ -1,27 +1,27 @@
 -------------------------------
         -- Bleeding --
 -------------------------------
-local notification
+local fontId
 local effect = false
 
 function GetPed() return PlayerPedId() end
 function GetCar() return GetVehiclePedIsIn(PlayerPedId(),false) end
 
-function StartBleedEffect(ped)
+function setBleedingOn(ped)
    SetEntityHealth(ped,GetEntityHealth(ped)-2)
     if not effect then
    StartScreenEffect('Rampage', 0, true)
     effect = true
 end
 
-   SetTextFont(notification)
+   SetTextFont(fontId)
    ShakeGameplayCam("SMALL_EXPLOSION_SHAKE", 1.0)
    Bleeding(Config.Notification)
    SetPlayerHealthRechargeMultiplier(PlayerId(), 0.0)
-   Wait(5000)
+   Wait(7000)
 end
  
- function StopBleedEffect(ped)
+ function setBleedingOff(ped)
    effect = false
    StopScreenEffect('Rampage')
    SetPlayerHealthRechargeMultiplier(PlayerId(), 1.0)
@@ -33,11 +33,11 @@ end
   local player = GetPlayerPed(-1)
   local Health = GetEntityHealth(player)
  
-  if Health <= 140  then
-	 StartBleedEffect(player)
+  if Health <= 130  then
+	 setBleedingOn(player)
  
-  elseif Health > 150 then
-	StopBleedEffect(player)
+  elseif Health > 140 then
+	setBleedingOff(player)
    end
   end
  end)
@@ -76,7 +76,7 @@ CreateThread(function()
                 label = "Check In",
             },
         },
-        distance = 2.0
+        distance = 1.5
     })
 end)
 -------------------------------
@@ -88,11 +88,11 @@ AddEventHandler('qphospital:StartTreatment', function()
         ESX.TriggerServerCallback('qphospital:hasMoney', function(hasMoney)
             if hasMoney then
                 TriggerServerEvent('qphospital:payBill', tonumber(Config.BillAmount))
-                exports['mythic_notify']:DoHudText('success', 'You have been billed $' .. Config.BillAmount)
+                exports['notify']:Alert("Pillbox Hospital", "You have been billed $500", 5725, 'treated')
                 GetTreatment("CheckIn")
                 Nurse()
             elseif not hasMoney then
-                return exports['mythic_notify']:DoHudText('error', 'You need $' .. Config.BillAmount .. ' in order to get treated.')
+                return exports['notify']:Alert("Notice", "You do not have enough money to get treated", 5725, 'checkin')
             end
         end)
     elseif not Config.CostMoney then
@@ -157,7 +157,7 @@ if action == "CheckIn" then
                 ClearPedTasksImmediately(PlayerPedId())
                 CheckIn = false
                 DoScreenFadeIn(50)
-                exports['mythic_notify']:DoHudText('error', 'You have been treated and can go on your way.')
+                exports['notify']:Alert("Pillbox Hospital", "You have been treated and can go on your way", 5725, 'treated')
                 SetEntityCoords(PlayerPedId(), 316.55, -584.42, 43.32)
                 SetEntityHeading(PlayerPedId(), 351.02)
                 RequestAnimSet("move_m@drunk@slightlydrunk")
