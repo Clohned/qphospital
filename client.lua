@@ -1,28 +1,28 @@
 -------------------------------
         -- Bleeding --
 -------------------------------
-local fontId
-local effect = false
+local Notification
+local bleeding = false
 
 function GetPed() return PlayerPedId() end
 function GetCar() return GetVehiclePedIsIn(PlayerPedId(),false) end
 
-function setBleedingOn(ped)
+function StartBleedingEffect(ped)
    SetEntityHealth(ped,GetEntityHealth(ped)-2)
-    if not effect then
+    if not bleeding then
    StartScreenEffect('Rampage', 0, true)
-    effect = true
+    bleeding = true
 end
 
-   SetTextFont(fontId)
+   SetTextFont(Notification)
    ShakeGameplayCam("SMALL_EXPLOSION_SHAKE", 1.0)
    Bleeding(Config.Notification)
    SetPlayerHealthRechargeMultiplier(PlayerId(), 0.0)
-   Wait(7000)
+   Wait(5000)
 end
  
- function setBleedingOff(ped)
-   effect = false
+ function StopBleedingEffect(ped)
+   bleeding = false
    StopScreenEffect('Rampage')
    SetPlayerHealthRechargeMultiplier(PlayerId(), 1.0)
 end
@@ -33,11 +33,11 @@ end
   local player = GetPlayerPed(-1)
   local Health = GetEntityHealth(player)
  
-  if Health <= 130  then
-	 setBleedingOn(player)
+  if Health <= 140  then
+	 StartBleedingEffect(player)
  
-  elseif Health > 140 then
-	setBleedingOff(player)
+  elseif Health > 150 then
+	StopBleedingEffect(player)
    end
   end
  end)
