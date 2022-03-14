@@ -29,7 +29,7 @@ Config.NPC      = {
 -- *DO NOT TOUCH UNLESS YOU KNOW WHAT YOUR DOING
 Config.Props  = {
     sitonbed  = {anim = "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER"},
-    layonback = {dict = "anim@gangops@morgue@table@", anim = "ko_front"},
+    laydown   = {dict = "anim@gangops@morgue@table@", anim = "ko_front"},
     smallcock = {anim = "WORLD_HUMAN_PICNIC"},
     area      = {
         [96868307] = {
