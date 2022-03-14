@@ -100,7 +100,7 @@ AddEventHandler('qphospital:StartTreatment', function()
                 GetTreatment("CheckIn")
                 Nurse()
             elseif not hasMoney then
-                return exports['mythic_notify']:DoHudText('error', 'You need $' .. Config.BillAmount .. ' in order to get treated.')
+                return exports['mythic_notify']:DoHudText('error', 'You need $' .. Config.BillAmount .. ' in order to get treated')
             end
         end)
     elseif not Config.CostMoney then
@@ -254,7 +254,7 @@ if action == "CheckIn" then
         ClearPedTasksImmediately(PlayerPedId())
         CheckIn = false
         DoScreenFadeIn(50)
-        exports['mythic_notify']:DoHudText('error', 'You have been treated and can go on your way.')
+        exports['mythic_notify']:DoHudText('error', 'You have been treated and can go on your way')
         SetEntityCoords(PlayerPedId(), 316.55, -584.42, 43.32)
         SetEntityHeading(PlayerPedId(), 351.02)
         RequestAnimSet("move_m@drunk@slightlydrunk")
