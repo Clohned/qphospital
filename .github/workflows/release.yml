@@ -1,0 +1,64 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "qpr*"
+
+jobs:
+  create-release:
+    name: Build and Create Tagged Pre release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Archive tools
+        run:  install zip
+
+      - name: Checkout source code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref }}
+
+      - name: Get variables
+        id: get_vars
+        run: |
+          echo '::set-output name=SHORT_SHA::$(git rev-parse --short HEAD)'
+          echo '::set-output name=DATE::$(date +'%D')'
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: "yarn"
+          cache-dependency-path: "web/yarn.lock"
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+        working-directory: web
+
+      - name: Run build
+        run: yarn build
+        working-directory: web
+        env:
+          CI: false
+
+      - name: Bundle files
+        run: |
+          mkdir -p ./temp/qphospital
+          mkdir -p ./temp/qphospital/web
+          cp ./{README.md,LICENSE,fxmanifest.lua} ./temp/qphospital
+          cp -r ./{client,locales,server} ./temp/qphospital
+          cp -r ./web/build ./temp/qphospital/web/build
+          cd ./temp && zip -r ../qphospital.zip ./qphospital
+      - name: Create Release
+        uses: "ohqpr/action-automatic-releases@v1.0.4"
+        id: auto_release
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          title: "${{ env.RELEASE_VERSION }}"
+          prerelease: false
+          files: qphospital.zip
+
+        env:
+          CI: false
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
