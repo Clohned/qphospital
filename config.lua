@@ -56,7 +56,7 @@ Config.Props = {
 
 -- *dont touch unless you know what your doing*
 Config.Beds = {
-	1631638868, -- hospital xray bed
-	2117668672, -- hospital catscan bed
-   -1519439119, -- hospital mri machine bed
+   1631638868, -- hospital xray bed
+   2117668672, -- hospital catscan bed
+  -1519439119, -- hospital mri machine bed
 }
