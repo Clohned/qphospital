@@ -134,34 +134,34 @@ end)
 -------------------------------
 RegisterNetEvent('qphospital:typescript')
 AddEventHandler('qphospital:typescript', function(data)
-    Anim = data.anim
-    local hash = GetEntityModel(data.entity)
+    Anim              = data.anim
+    local hash        = GetEntityModel(data.entity)
     local shesmyheart = GetClosestObjectOfType(spud.x, spud.y, spud.z, 3.0, hash, 0, 0, 0)
-    local vuestand = GetEntityCoords(shesmyheart)
-    local bbw = #(vuestand - spud)
+    local vuestand    = GetEntityCoords(shesmyheart)
+    local bbw         = #(vuestand - spud)
     if (bbw < 3.0 and shesmyheart ~= 0) then
     if (bbw < 1.5) then
      yarnlock = {
-        golang = shesmyheart,
+        golang        = shesmyheart,
         whatdidiwrite = vuestand,
-        golangbleu = Config.Props.area[hash].metadataone,
-        golangrain = Config.Props.area[hash].metadatatwo,
+        golangbleu    = Config.Props.area[hash].metadataone,
+        golangrain    = Config.Props.area[hash].metadatatwo,
         golangdarling = Config.Props.area[hash].metadatathree,
-        dwarf = Config.Props.area[hash].metadatafour,
-        darlingwhite = Config.Props.area[hash].bed
+        dwarf         = Config.Props.area[hash].metadatafour,
+        darlingwhite  = Config.Props.area[hash].bed
        }
      end
     end
     if yarnlock.golang then
-        local object = yarnlock.golang
-        local fatman = yarnlock.golangbleu
-        local skinnyman = yarnlock.golangrain
-        local midget = yarnlock.golangdarling
-        local thumbhead = yarnlock.dwarf
+        darling             = GetEntityCoords(ped)
+        local object        = yarnlock.golang
+        local fatman        = yarnlock.golangbleu
+        local midget        = yarnlock.golangdarling
+        local skinnyman     = yarnlock.golangrain
+        local thumbhead     = yarnlock.dwarf
+        local beanflicker   = yarnlock.whatdidiwrite
         local daysarecoming = yarnlock.darlingwhite
-        local beanflicker = yarnlock.whatdidiwrite
-        local ped = PlayerPedId()
-        darling = GetEntityCoords(ped)
+        local ped           = PlayerPedId()
         FreezeEntityPosition(object, true)
         FreezeEntityPosition(ped, true)
         rbleu = true
