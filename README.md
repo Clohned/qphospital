@@ -2,7 +2,7 @@
 
 Super simple hospital check-in resource utilizing qtarget & nh-context. This is still a work in progress and contains some test code (ex. Debug event).
 
-[Preview Video](https://www.youtube.com/watch?v=rNyuOtHWOZs)
+[Preview Video](https://www.youtube.com/watch?v=0P8G-Oqh1WM)
 
 # Requirements
 
