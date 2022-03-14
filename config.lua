@@ -1,20 +1,22 @@
 Config = {}
 
 Config.VersionCheck = true -- If set true, you'll get a print in server console when your resource is out of date and needs a update.
-Config.Debug = true -- Receieve treatment test command (change the command below to your liking)
+
+Config.Debug = true -- Receieve treatment test command (change the command below to your liking) set false to disable it
 Config.DebugCommand = 'treatmenttest' -- The command you wish to use to test receiving treatment
 
-Config.Notification = "You need medical attention!" -- Notification you will receive for when you are bleeding and in need of treatment
+-- Notification you will receive when you are bleeding and in need of treatment
+Config.Notification = "You need medical attention!"
 
 -- Choose to have players pay for receiving treatment
 -- If set to true edit 'Config.BillAmount' to your desired price for receiving treatment. If set false it will be free for everyone.
-Config.CostMoney = true
+Config.CostMoney  = true
 
--- Cost to receive treatment
+-- Total cost to receive treatment in cash
 Config.BillAmount = 500
 
 -- Choose for players to gain health when using qtarget to lay down in bed (got bored so why not)
--- If set to 0 this option will be disbaled. If set to 3 players will receive 1 health every 3 seconds while laying down in bed.
+-- If set 0 this option will be disbaled. If set 3 players will receive 1 health every 3 seconds while laying down in bed.
 Config.HealTime = 3
 
 -- NPC spawn location/model & hash
