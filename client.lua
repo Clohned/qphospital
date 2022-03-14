@@ -1,14 +1,14 @@
-local yarnlock = {}
-local rainydays = false
-local rbleu = false
+local pap          = 0
+local spud         = GetEntityCoords(PlayerPedId())
+local rbleu        = false
+local darling      = 0
+local yarnlock     = {}
+local bleeding     = false
+local rainydays    = false
 local cockandballs = false
-local darling = 0
-local pap = 0
-local spud = GetEntityCoords(PlayerPedId())
 local Notification
-local bleeding = false
 -------------------------------
-        -- NPC --
+         -- NPC --
 -------------------------------
 CreateThread(function()
     Wait(100)
@@ -38,7 +38,7 @@ CreateThread(function()
         if yarnlock.darlingwhite == true then
         local ply = PlayerPedId()
         local health = GetEntityHealth(ply)
-        if health <= 199 then
+        if health <= 150 then
         SetEntityHealth(ply, health + 1)
       end
      end
@@ -82,8 +82,7 @@ CreateThread(function()
             },
 
         },
-        job = {"all"},
-        distance = 3.5
+        distance = 1.5
     })
 
 end)
@@ -144,23 +143,23 @@ AddEventHandler('qphospital:typescript', function(data)
     if (bbw < 1.5) then
         yarnlock = {
             golang = shesmyheart,
-            golangCoords = vuestand,
-            golangcX = Config.Props.area[hash].metadataone,
-            golangcY = Config.Props.area[hash].metadatatwo,
-            golangcZ = Config.Props.area[hash].metadatathree,
-            golangDir = Config.Props.area[hash].metadatafour,
+            whatdidiwrite = vuestand,
+            golangbleu = Config.Props.area[hash].metadataone,
+            golangrain = Config.Props.area[hash].metadatatwo,
+            golangdarling = Config.Props.area[hash].metadatathree,
+            dwarf = Config.Props.area[hash].metadatafour,
             darlingwhite = Config.Props.area[hash].bed
         }
      end
     end
     if yarnlock.golang then
         local object = yarnlock.golang
-        local vertx = yarnlock.golangcX
-        local verty = yarnlock.golangcY
-        local vertz = yarnlock.golangcZ
-        local dir = yarnlock.golangDir
+        local fatman = yarnlock.golangbleu
+        local skinnyman = yarnlock.golangrain
+        local midget = yarnlock.golangdarling
+        local thumbhead = yarnlock.dwarf
         local daysarecoming = yarnlock.darlingwhite
-        local beanflicker = yarnlock.golangCoords
+        local beanflicker = yarnlock.whatdidiwrite
         
         local ped = PlayerPedId()
         darling = GetEntityCoords(ped)
@@ -176,7 +175,7 @@ AddEventHandler('qphospital:typescript', function(data)
                 
             AnimLoadDict(dict, anim, ped)
         else
-            TaskStartScenarioAtPosition(ped, Config.Props.sitonbed.anim, beanflicker.x + vertx, beanflicker.y + verty, beanflicker.z - vertz, GetEntityHeading(object) + dir, 0, true, true)
+            TaskStartScenarioAtPosition(ped, Config.Props.sitonbed.anim, beanflicker.x + fatman, beanflicker.y + skinnyman, beanflicker.z - midget, GetEntityHeading(object) + thumbhead, 0, true, true)
         end
     else
         if Anim == 'back' then
@@ -188,7 +187,7 @@ AddEventHandler('qphospital:typescript', function(data)
                     
             Animation(dict, anim, ped)
         else
-            TaskStartScenarioAtPosition(ped, Config.Props.layonback.anim, beanflicker.x + vertx, beanflicker.y + verty, beanflicker.z - vertz, GetEntityHeading(object) + dir, 0, true, true
+            TaskStartScenarioAtPosition(ped, Config.Props.layonback.anim, beanflicker.x + fatman, beanflicker.y + skinnyman, beanflicker.z - midget, GetEntityHeading(object) + thumbhead, 0, true, true
         )
         end
     elseif Anim == 'stomach' then
@@ -200,7 +199,7 @@ AddEventHandler('qphospital:typescript', function(data)
                     
             Animation(dict, anim, ped)
         else
-            TaskStartScenarioAtPosition(ped, Config.Props.layonstomach.anim, beanflicker.x + vertx, beanflicker.y + verty, beanflicker.z - vertz, GetEntityHeading(object) + dir, 0, true, true)
+            TaskStartScenarioAtPosition(ped, Config.Props.layonstomach.anim, beanflicker.x + fatman, beanflicker.y + skinnyman, beanflicker.z - midget, GetEntityHeading(object) + thumbhead, 0, true, true)
         end
     elseif Anim == 'sit' then
         if Config.Props.smallcock.dict ~= nil then
@@ -211,7 +210,7 @@ AddEventHandler('qphospital:typescript', function(data)
                     
             Animation(dict, anim, ped)
         else
-            TaskStartScenarioAtPosition(ped, Config.Props.smallcock.anim, beanflicker.x + vertx, beanflicker.y + verty, beanflicker.z - vertz, GetEntityHeading(object) + 180.0, 0, true, true)
+            TaskStartScenarioAtPosition(ped, Config.Props.smallcock.anim, beanflicker.x + fatman, beanflicker.y + skinnyman, beanflicker.z - midget, GetEntityHeading(object) + 180.0, 0, true, true)
         end
       end
     end
