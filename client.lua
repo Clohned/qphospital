@@ -7,9 +7,8 @@ local bleeding     = false
 local rainydays    = false
 local cockandballs = false
 local Notification
--------------------------------
-         -- NPC --
--------------------------------
+
+-- Entities
 CreateThread(function()
     Wait(100)
     for _,v in pairs (Config.NPC) do
@@ -20,9 +19,7 @@ CreateThread(function()
     ped = CreateHospitalPed(v.model, v.coords, v.heading)
   end
 end)
--------------------------------
-       -- Healing --
--------------------------------
+
 CreateThread(function()
     while true do
       ply = PlayerPedId()
@@ -45,9 +42,7 @@ CreateThread(function()
     end
    end
 end)
--------------------------------
-       -- Exports --
--------------------------------
+
 CreateThread(function()
     local doctor = {}
     for _,v in pairs (Config.NPC) do
@@ -57,7 +52,7 @@ CreateThread(function()
         options = {
             {
                 event = "openmenu",
-                icon = "fas fa-sign-in-alt",
+                icon  = "fas fa-sign-in-alt",
                 label = "Check In",
             },
         },
@@ -70,15 +65,15 @@ CreateThread(function()
         options = {
             {
                 event = "qphospital:typescript",
-                icon = "fas fa-clipboard",
+                icon  = "fas fa-clipboard",
                 label = "Sit Down",
-                anim = "sit"
+                anim  = "sit"
             },
             {
                 event = "qphospital:typescript",
-                icon = "fas fa-clipboard",
+                icon  = "fas fa-clipboard",
                 label = "Lay Down",
-                anim = "back"
+                anim  = "back"
             },
 
         },
@@ -86,9 +81,9 @@ CreateThread(function()
     })
 
 end)
--------------------------------
-        -- Events --
--------------------------------
+-- End of entities
+
+-- Events
 RegisterNetEvent('qphospital:StartTreatment')
 AddEventHandler('qphospital:StartTreatment', function()
     if Config.CostMoney then
@@ -107,31 +102,27 @@ AddEventHandler('qphospital:StartTreatment', function()
         Nurse()
     end
 end)
--------------------------------
-   -- Context menu event --
--------------------------------
+
 RegisterNetEvent('openmenu', function()
     TriggerEvent('nh-context:sendMenu', {
         {
-            id = 1,
+            id     = 1,
             header = "Pillbox Hospital",
-            txt = ""
+            txt    = ""
         },
         {
-            id = 2,
+            id     = 2,
             header = "Receive Treatment",
-            txt = "Cost: $" .. Config.BillAmount,
+            txt    = "Cost: $" .. Config.BillAmount,
             params = {
                 event = "qphospital:StartTreatment",
-                args = {
+                args  = {
                 }
             }
         },
     })
 end)
--------------------------------
-      -- Prop events --
--------------------------------
+
 RegisterNetEvent('qphospital:typescript')
 AddEventHandler('qphospital:typescript', function(data)
     Anim              = data.anim
@@ -152,6 +143,7 @@ AddEventHandler('qphospital:typescript', function(data)
        }
      end
     end
+
     if yarnlock.golang then
         darling             = GetEntityCoords(ped)
         local object        = yarnlock.golang
@@ -162,98 +154,84 @@ AddEventHandler('qphospital:typescript', function(data)
         local beanflicker   = yarnlock.whatdidiwrite
         local daysarecoming = yarnlock.darlingwhite
         local ped           = PlayerPedId()
-        FreezeEntityPosition(object, true)
-        FreezeEntityPosition(ped, true)
-        rbleu = true
-        if daysarecoming == false then
-
-        if Config.Props.sitonbed.dict ~= nil then
-            SetEntityCoords(ped, beanflicker.x, beanflicker.y, beanflicker.z + 0.5)
-            SetEntityHeading(ped, GetEntityHeading(object) - 180.0)
-            local dict = Config.Props.sitonbed.dict
-            local anim = Config.Props.sitonbed.anim
-            AnimLoadDict(dict, anim, ped)
-        else
-            TaskStartScenarioAtPosition(ped, Config.Props.sitonbed.anim, beanflicker.x + fatman, beanflicker.y + skinnyman, beanflicker.z - midget, GetEntityHeading(object) + thumbhead, 0, true, true)
-        end
+        rbleu               = true
+        if daysarecoming    == false then
 
     else
-        if Anim == 'back' then
-            if Config.Props.layonback.dict ~= nil then
-            SetEntityCoords(ped, beanflicker.x, beanflicker.y, beanflicker.z + 0.5)
-            SetEntityHeading(ped, GetEntityHeading(object) - 180.0)
-            local dict = Config.Props.layonback.dict
-            local anim = Config.Props.layonback.anim   
-            Animation(dict, anim, ped)
-        else
-            TaskStartScenarioAtPosition(ped, Config.Props.layonback.anim, beanflicker.x + fatman, beanflicker.y + skinnyman, beanflicker.z - midget, GetEntityHeading(object) + thumbhead, 0, true, true)
-        end
+    if Anim == 'back' then
+        if Config.Props.laydown.dict ~= nil then
+        SetEntityCoords(ped, beanflicker.x, beanflicker.y, beanflicker.z + 0.5)
+        SetEntityHeading(ped, GetEntityHeading(object) - 180.0)
+        local dict = Config.Props.laydown.dict
+        local anim = Config.Props.laydown.anim   
+        Animation(dict, anim, ped)
+    else
+        TaskStartScenarioAtPosition(ped, Config.Props.laydown.anim, beanflicker.x + fatman, beanflicker.y + skinnyman, beanflicker.z - midget, GetEntityHeading(object) + thumbhead, 0, true, true)
+    end
 
     elseif Anim == 'sit' then
         if Config.Props.smallcock.dict ~= nil then
-            SetEntityCoords(ped, beanflicker.x, beanflicker.y, beanflicker.z + 0.5)
-            SetEntityHeading(ped, GetEntityHeading(object) - 180.0)
-            local dict = Config.Props.smallcock.dict
-            local anim = Config.Props.smallcock.anim     
-            Animation(dict, anim, ped)
-        else
-            TaskStartScenarioAtPosition(ped, Config.Props.smallcock.anim, beanflicker.x + fatman, beanflicker.y + skinnyman, beanflicker.z - midget, GetEntityHeading(object) + 180.0, 0, true, true)
+        SetEntityCoords(ped, beanflicker.x, beanflicker.y, beanflicker.z + 0.5)
+        SetEntityHeading(ped, GetEntityHeading(object) - 180.0)
+        local dict = Config.Props.smallcock.dict
+        local anim = Config.Props.smallcock.anim     
+        Animation(dict, anim, ped)
+    else
+        TaskStartScenarioAtPosition(ped, Config.Props.smallcock.anim, beanflicker.x + fatman, beanflicker.y + skinnyman, beanflicker.z - midget, GetEntityHeading(object) + 180.0, 0, true, true)
         end
       end
     end
   end
 end)
--------------------------------
-       -- Functions --
--------------------------------
+-- End of events
+
+-- Functions
 GetTreatment = function(action)
-if action == "CheckIn" then
+if action    == "CheckIn" then
     SetEntityCoords(PlayerPedId(), 351.37716674805, -583.1494140625, 44.206405639648 + 0.3)
     TriggerEvent('esx_ambulancejob:revive', PlayerPedId())
     SetEntityHealth(PlayerPedId(), 200)
-    Wait(1000)
+     Wait(1000)
     TreatmentInProgress()
-    Wait(500)
+     Wait(500)
     CreateThread(function()
         local CheckIn = true
         while CheckIn do
         if currentView ~= 4 then
         DisableActions(PlayerPedId())
         exports.rprogress:Custom({
-            Async = true,
+            Async    = true,
             Duration = 22500,
-            Label = "Being treated...",
-            Easing = "easeLinear",
-            Radius = 60, 
-            Stroke = 10,
+            Label    = "Being treated...",
+            Easing   = "easeLinear",
+            Radius   = 60, 
+            Stroke   = 10,
             DisableControls = {
-                Mouse = false,
-                Player = true
-                }
+              Mouse  = false,
+              Player = true
+              }
             },
             function(e)
             if not e then
             ClearPedTasks(PlayerPedId())
             end
         end)
-        Wait(22500)
+         Wait(22500)
         ClearPedTasksImmediately(PlayerPedId())
         CheckIn = false
-        DoScreenFadeIn(50)
+         DoScreenFadeIn(50)
         exports['mythic_notify']:SendAlert('error', 'You have been treated and can go on your way')
         SetEntityCoords(PlayerPedId(), 316.55, -584.42, 43.32)
         SetEntityHeading(PlayerPedId(), 351.02)
         RequestAnimSet("move_m@drunk@slightlydrunk")
         while not HasAnimSetLoaded("move_m@drunk@slightlydrunk") do
-        Wait(0)
-        end
+      end
         SetPedMovementClipset(PlayerPedId(), "move_m@drunk@slightlydrunk", true)
         StartScreenEffect('drugsmichaelaliensfightout', 0, true)
-        Wait(10000)
+         Wait(10000)
         StartScreenEffect('drugsmichaelaliensfightout', 0, true)
-        Wait(10000)
+         Wait(10000)
         StopAllScreenEffects(PlayerPedId())
-        ResetPedMovementClipset(PlayerPedId(), 0)
       end
      end
    end)
@@ -261,40 +239,36 @@ if action == "CheckIn" then
 end
 
 TreatmentInProgress = function()
-    SetEntityCoords(PlayerPedId(), 317.88, -585.21, 44.22 + 0.3)
-    RequestAnimDict('anim@gangops@morgue@table@')
-    while not HasAnimDictLoaded('anim@gangops@morgue@table@') do
-        Wait(0)
-    end
-    TaskPlayAnim(PlayerPedId(), 'anim@gangops@morgue@table@' , 'ko_front' ,8.0, -8.0, -1, 1, 0, false, false, false )
-    SetEntityHeading(PlayerPedId(), 335.05)
-    InAction = true
+ SetEntityCoords(PlayerPedId(), 317.88, -585.21, 44.22 + 0.3)
+ RequestAnimDict('anim@gangops@morgue@table@')
+  while not HasAnimDictLoaded('anim@gangops@morgue@table@') do
+  Wait(0)
+end
+ TaskPlayAnim(PlayerPedId(), 'anim@gangops@morgue@table@' , 'ko_front' ,8.0, -8.0, -1, 1, 0, false, false, false )
+ SetEntityHeading(PlayerPedId(), 335.05)
+  InAction = true
 end
 
 Nurse = function()
-    modelHash = `a_m_m_prolhost_01`
-    RequestModel(modelHash)
-
-    while not HasModelLoaded(modelHash) do
+  modelHash = `a_m_m_prolhost_01`
+  RequestModel(modelHash)
+  while not HasModelLoaded(modelHash) do
     Wait(1)
-    end
+ end
 
-    local NurseNPC = CreatePed(5, modelHash, 316.82, -579.40, 43.30, 178.70, false, false)
-    SetEntityAsMissionEntity(NurseNPC)
-	SetEntityInvincible(NurseNPC, true)
+ local NurseNPC = CreatePed(5, modelHash, 316.82, -579.40, 43.30, 178.70, false, false)
+ SetEntityAsMissionEntity(NurseNPC)
+ SetEntityInvincible(NurseNPC, true)
     Wait(1500)
-
-    SetPedDesiredHeading(NurseNPC, 178.70)
+ SetPedDesiredHeading(NurseNPC, 178.70)
     Wait(100)
-
-    TaskGoStraightToCoord(NurseNPC, 316.67, -585.20, 43.28, 1.0, 5000, 251.89, 2.0)
+ TaskGoStraightToCoord(NurseNPC, 316.67, -585.20, 43.28, 1.0, 5000, 251.89, 2.0)
     Wait(5000)
-
-    TaskStartScenarioInPlace(NurseNPC, "PROP_HUMAN_BUM_BIN", 0, false)
+ TaskStartScenarioInPlace(NurseNPC, "PROP_HUMAN_BUM_BIN", 0, false)
     Wait(40000)
-    TaskGoStraightToCoord(NurseNPC, 342.41, -581.68, 42.41, 1.0, 5000, 70.50, 2.0)
+ TaskGoStraightToCoord(NurseNPC, 342.41, -581.68, 42.41, 1.0, 5000, 70.50, 2.0)
     Wait(5000)
-    DeleteEntity(NurseNPC)
+ DeleteEntity(NurseNPC)
 end
 
 startAnim = function(lib, anim)
@@ -318,27 +292,22 @@ DisableActions = function()
 end
 
 CreateHospitalPed = function(hash, coords, heading, animDict, animName)
-    RequestModel(GetHashKey(hash))
-    while not HasModelLoaded(GetHashKey(hash)) do
-        Wait(5)
-    end
-    local ped = CreatePed(5, hash, coords, false, false)
-    SetEntityHeading(ped, heading)
-    SetEntityAsMissionEntity(ped, true, true)
-    SetPedFleeAttributes(ped, 0, 0)
-    FreezeEntityPosition(ped, true)
-    SetEntityInvincible(ped, true)
-    SetBlockingOfNonTemporaryEvents(ped, true)
-    while not TaskPlayAnim(ped, animDict, animName, 0.0, 1.0, -1, 17, 0, 0, 0, 0) do
-        Wait(1000)
-    end
+  RequestModel(GetHashKey(hash))
+  while not HasModelLoaded(GetHashKey(hash)) do
+    Wait(5)
+ end
+  local ped = CreatePed(5, hash, coords, false, false)
+  SetEntityHeading(ped, heading)
+  SetEntityAsMissionEntity(ped, true, true)
+  SetPedFleeAttributes(ped, 0, 0)
+  FreezeEntityPosition(ped, true)
+  SetEntityInvincible(ped, true)
+  SetBlockingOfNonTemporaryEvents(ped, true)
+  while not TaskPlayAnim(ped, animDict, animName, 0.0, 1.0, -1, 17, 0, 0, 0, 0) do
+    Wait(1000)
+ end
     return ped
 end
--------------------------------
-   -- Bleeding function --
--------------------------------
-function GetPed() return PlayerPedId() end
-function GetCar() return GetVehiclePedIsIn(PlayerPedId(),false) end
 
 function StartBleedingEffect(ped)
    SetEntityHealth(ped,GetEntityHealth(ped)-2)
@@ -376,13 +345,21 @@ end
  end)
   
  function Bleeding(text)
- SetNotificationTextEntry("STRING")
- AddTextComponentString(text)
- DrawNotification(false, false)
+  SetNotificationTextEntry("STRING")
+  AddTextComponentString(text)
+  DrawNotification(false, false)
  end
--------------------------------
-      -- Key mapping --
--------------------------------
+
+ function Animation(dict, anim, ped)
+  RequestAnimDict(dict)
+  while not HasAnimDictLoaded(dict) do
+    Citizen.Wait(0)
+  end
+  TaskPlayAnim(ped, dict, anim, 8.0, 1.0, -1, 1, 0, 0, 0, 0)
+end
+-- End of functions
+
+-- Key mapping
 RegisterKeyMapping('qphospital:vue', 'Get up', 'keyboard', 'F')
 RegisterCommand('qphospital:vue', function(raw)
 if rbleu then
@@ -397,20 +374,13 @@ if rbleu then
     yarnlock = {}
   end
 end)
+-- End of Key mapping
 
-function Animation(dict, anim, ped)
-  RequestAnimDict(dict)
-  while not HasAnimDictLoaded(dict) do
-    Citizen.Wait(0)
-  end
-  TaskPlayAnim(ped, dict, anim, 8.0, 1.0, -1, 1, 0, 0, 0, 0)
-end
--------------------------------
-        -- Debug --
--------------------------------
+-- Debug
 if Config.Debug then
-    RegisterCommand("treatmenttest", function(source, args, rawCommand)
-        TriggerEvent('openmenu')
-    end)
+  RegisterCommand(Config.DebugCommand, function(source, args, rawCommand)
+      TriggerEvent('openmenu')
+   end)
 end
+-- End of Debug
 

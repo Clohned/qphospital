@@ -5,7 +5,7 @@ game         'gta5'
 
 -- Resource Information --
 name         'qphospital'
-author       'qpr' -- https://github.com/ohqpr
+author       'qpr'
 version      '1.0.4'
 repository   'https://github.com/ohqpr/qphospital'
 description  'Hospital treatment resource utilizing qtarget & nh-context'
@@ -24,9 +24,5 @@ shared_scripts {
   'config.lua'
 }
 
-server_scripts {
-  '@oxmysql/lib/MySQL.lua',
-  'server/*.lua'
-}
-
+server_script 'server/*.lua'
 client_script 'client.lua'
