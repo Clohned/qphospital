@@ -96,13 +96,11 @@ AddEventHandler('qphospital:StartTreatment', function()
         ESX.TriggerServerCallback('qphospital:hasMoney', function(hasMoney)
             if hasMoney then
                 TriggerServerEvent('qphospital:payBill', tonumber(Config.BillAmount))
-                exports['notify']:Alert("Pillbox Hospital", "You have been billed $500", 5725, 'treated')
-                --exports['mythic_notify']:DoHudText('success', 'You have been billed $' .. Config.BillAmount)
+                exports['mythic_notify']:DoHudText('success', 'You have been billed $' .. Config.BillAmount)
                 GetTreatment("CheckIn")
                 Nurse()
             elseif not hasMoney then
-                return exports['notify']:Alert("Notice", "You do not have enough money to get treated", 5725, 'checkin')
-                --return exports['mythic_notify']:DoHudText('error', 'You need $' .. Config.BillAmount .. ' in order to get treated.')
+                return exports['mythic_notify']:DoHudText('error', 'You need $' .. Config.BillAmount .. ' in order to get treated.')
             end
         end)
     elseif not Config.CostMoney then
@@ -256,8 +254,7 @@ if action == "CheckIn" then
         ClearPedTasksImmediately(PlayerPedId())
         CheckIn = false
         DoScreenFadeIn(50)
-        exports['notify']:Alert("Pillbox Hospital", "You have been treated and can go on your way", 5725, 'treated')
-        --exports['mythic_notify']:DoHudText('error', 'You have been treated and can go on your way.')
+        exports['mythic_notify']:DoHudText('error', 'You have been treated and can go on your way.')
         SetEntityCoords(PlayerPedId(), 316.55, -584.42, 43.32)
         SetEntityHeading(PlayerPedId(), 351.02)
         RequestAnimSet("move_m@drunk@slightlydrunk")
