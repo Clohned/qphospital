@@ -15,8 +15,8 @@ dependencies {
   '/server:5181',
   '/onesync',
   'qtarget',
-  'nh-context',
-  'esx_ambulancejob'
+  'rprogress',
+  'nh-context'
 }
 
 shared_scripts {
