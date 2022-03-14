@@ -1,22 +1,22 @@
 Config = {}
 
-Config.VersionCheck = true -- If set to true, you'll get a print in server console when your resource is out of date
-Config.Debug = true -- Receive treatment test command by using /treatmenttest
+Config.VersionCheck = true -- If set true, you'll get a print in server console when your resource is out of date and needs a update.
+Config.Debug = true -- Treatment test command by using /treatmenttest
 
-Config.Notification = "You need medical attention!" -- Notification you will receive for when you are bleeding 
+Config.Notification = "You need medical attention!" -- Notification you will receive for when you are bleeding and in need of treatment
 
--- Choose to charge players cash if they want treatment
--- If set to true edit 'Config.BillAmount' to your desired price for receiving treatment, if false it will be free for everyone
+-- Choose to have players pay for receiving treatment
+-- If set to true edit 'Config.BillAmount' to your desired price for receiving treatment. If set false it will be free for everyone.
 Config.CostMoney = true
 
 -- Cost to receive treatment
 Config.BillAmount = 500
 
--- Choose for players to gain health when using qtarget to lay down in bed, this is for when somebody chooses not to pay for treatment (got bored so why not)
--- If set to 0 this option will be disbaled, if set to 3 players will receive 1 health every 3 seconds while laying down in bed
+-- Choose for players to gain health when using qtarget to lay down in bed (got bored so why not)
+-- If set to 0 this option will be disbaled. If set to 3 players will receive 1 health every 3 seconds while laying down in bed.
 Config.HealTime = 3
 
-Config.NPC = { -- npc spawn location & model
+Config.NPC = { -- npc spawn location/model & hash
     {
         coords = vector3(311.57, -594.11, 43.28 - 0.99),
         heading = 0.5440,
@@ -25,7 +25,7 @@ Config.NPC = { -- npc spawn location & model
     },
 }
 
--- *dont touch unless you know what your doing*
+-- *DO NOT TOUCH UNLESS YOU KNOW WHAT YOUR DOING
 Config.Props = {
 	sitonbed = {anim='PROP_HUMAN_SEAT_CHAIR_MP_PLAYER'},
 	layonback = {dict='anim@gangops@morgue@table@', anim='ko_front'},
@@ -54,7 +54,7 @@ Config.Props = {
 		   }
                  }
 
--- *dont touch unless you know what your doing*
+-- *DO NOT TOUCH UNLESS YOU KNOW WHAT YOUR DOING*
 Config.Beds = {
    1631638868, -- hospital xray bed
    2117668672, -- hospital catscan bed
