@@ -1,7 +1,8 @@
 Config = {}
 
 Config.VersionCheck = true -- If set true, you'll get a print in server console when your resource is out of date and needs a update.
-Config.Debug = true -- Treatment test command by using /treatmenttest
+Config.Debug = true -- Receieve treatment test command (change the command below to your liking)
+Config.DebugCommand = 'treatmenttest' -- The command you wish to use to test receiving treatment
 
 Config.Notification = "You need medical attention!" -- Notification you will receive for when you are bleeding and in need of treatment
 
