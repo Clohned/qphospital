@@ -29,7 +29,6 @@ Config.NPC = { -- npc spawn location/model & hash
 Config.Props = {
 	sitonbed = {anim='PROP_HUMAN_SEAT_CHAIR_MP_PLAYER'},
 	layonback = {dict='anim@gangops@morgue@table@', anim='ko_front'},
-	layonstomach = {anim='WORLD_HUMAN_SUNBATHE'},
 	smallcock = {anim='WORLD_HUMAN_PICNIC'},
 		area = {
 		[96868307] = {object=96868307, metadataone=0.0, metadatatwo=0.0, metadatathree=-0.4, metadatafour=168.0, bed=false},
