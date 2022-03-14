@@ -13,7 +13,7 @@ description  'Hospital treatment resource utilizing qtarget & nh-context'
 -- Manifest --
 dependencies {
   '/server:5181',
-	'/onesync',
+  '/onesync',
   'qtarget',
   'nh-context',
   'esx_ambulancejob'
