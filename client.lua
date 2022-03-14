@@ -141,15 +141,15 @@ AddEventHandler('qphospital:typescript', function(data)
     local bbw = #(vuestand - spud)
     if (bbw < 3.0 and shesmyheart ~= 0) then
     if (bbw < 1.5) then
-        yarnlock = {
-            golang = shesmyheart,
-            whatdidiwrite = vuestand,
-            golangbleu = Config.Props.area[hash].metadataone,
-            golangrain = Config.Props.area[hash].metadatatwo,
-            golangdarling = Config.Props.area[hash].metadatathree,
-            dwarf = Config.Props.area[hash].metadatafour,
-            darlingwhite = Config.Props.area[hash].bed
-        }
+     yarnlock = {
+        golang = shesmyheart,
+        whatdidiwrite = vuestand,
+        golangbleu = Config.Props.area[hash].metadataone,
+        golangrain = Config.Props.area[hash].metadatatwo,
+        golangdarling = Config.Props.area[hash].metadatathree,
+        dwarf = Config.Props.area[hash].metadatafour,
+        darlingwhite = Config.Props.area[hash].bed
+       }
      end
     end
     if yarnlock.golang then
@@ -160,54 +160,41 @@ AddEventHandler('qphospital:typescript', function(data)
         local thumbhead = yarnlock.dwarf
         local daysarecoming = yarnlock.darlingwhite
         local beanflicker = yarnlock.whatdidiwrite
-        
         local ped = PlayerPedId()
         darling = GetEntityCoords(ped)
         FreezeEntityPosition(object, true)
         FreezeEntityPosition(ped, true)
         rbleu = true
         if daysarecoming == false then
+
         if Config.Props.sitonbed.dict ~= nil then
             SetEntityCoords(ped, beanflicker.x, beanflicker.y, beanflicker.z + 0.5)
             SetEntityHeading(ped, GetEntityHeading(object) - 180.0)
             local dict = Config.Props.sitonbed.dict
             local anim = Config.Props.sitonbed.anim
-                
             AnimLoadDict(dict, anim, ped)
         else
             TaskStartScenarioAtPosition(ped, Config.Props.sitonbed.anim, beanflicker.x + fatman, beanflicker.y + skinnyman, beanflicker.z - midget, GetEntityHeading(object) + thumbhead, 0, true, true)
         end
+
     else
         if Anim == 'back' then
             if Config.Props.layonback.dict ~= nil then
             SetEntityCoords(ped, beanflicker.x, beanflicker.y, beanflicker.z + 0.5)
             SetEntityHeading(ped, GetEntityHeading(object) - 180.0)
             local dict = Config.Props.layonback.dict
-            local anim = Config.Props.layonback.anim
-                    
+            local anim = Config.Props.layonback.anim   
             Animation(dict, anim, ped)
         else
-            TaskStartScenarioAtPosition(ped, Config.Props.layonback.anim, beanflicker.x + fatman, beanflicker.y + skinnyman, beanflicker.z - midget, GetEntityHeading(object) + thumbhead, 0, true, true
-        )
+            TaskStartScenarioAtPosition(ped, Config.Props.layonback.anim, beanflicker.x + fatman, beanflicker.y + skinnyman, beanflicker.z - midget, GetEntityHeading(object) + thumbhead, 0, true, true)
         end
-    elseif Anim == 'stomach' then
-        if Config.Props.layonstomach.dict ~= nil then
-            SetEntityCoords(ped, beanflicker.x, beanflicker.y, beanflicker.z + 0.5)
-            SetEntityHeading(ped, GetEntityHeading(object) - 180.0)
-            local dict = Config.Props.layonstomach.dict
-            local anim = Config.Props.layonstomach.anim
-                    
-            Animation(dict, anim, ped)
-        else
-            TaskStartScenarioAtPosition(ped, Config.Props.layonstomach.anim, beanflicker.x + fatman, beanflicker.y + skinnyman, beanflicker.z - midget, GetEntityHeading(object) + thumbhead, 0, true, true)
-        end
+
     elseif Anim == 'sit' then
         if Config.Props.smallcock.dict ~= nil then
             SetEntityCoords(ped, beanflicker.x, beanflicker.y, beanflicker.z + 0.5)
             SetEntityHeading(ped, GetEntityHeading(object) - 180.0)
             local dict = Config.Props.smallcock.dict
-            local anim = Config.Props.smallcock.anim
-                    
+            local anim = Config.Props.smallcock.anim     
             Animation(dict, anim, ped)
         else
             TaskStartScenarioAtPosition(ped, Config.Props.smallcock.anim, beanflicker.x + fatman, beanflicker.y + skinnyman, beanflicker.z - midget, GetEntityHeading(object) + 180.0, 0, true, true)
