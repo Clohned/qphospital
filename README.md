@@ -1,23 +1,22 @@
 ## qphospital (WIP)
 
-Super simple hospital treatment resource utilizing qtarget & nh-context. This is still a work in progress and contains some test code (ex. Debug event).
+Super simple hospital treatment resource utilizing ox_lib, ox_inventory, qtarget & nh-context This is still a work in progress and contains some test code (ex. Debug event).
 
 [Preview Video](https://www.youtube.com/watch?v=0P8G-Oqh1WM)
 
 ## Requirements
 
+- [ox_lib](https://github.com/overextended/ox_lib)
+
+- [ox_inventory](https://github.com/overextended/ox_inventory)
+
 - [qtarget](https://github.com/overextended/qtarget)
 
-- [nh-context](https://github.com/nighmares/nh-context)
-
-- [rprogress](https://github.com/Mobius1/rprogress) --> Can be changed to any system of your liking if you know what your doing, this is just what I used.
-
-- [mythic_notify](https://github.com/wowpanda/mythic_notify) --> This can also be changed to a system of your liking.
+- [nh-context](https://github.com/nerohiro/nh-context)
 
 - [esx_ambulancejob](https://github.com/overextended/esx-legacy/tree/main/%5Besx_addons%5D/esx_ambulancejob) --> This was made and tested utilizing Linden's ESX Legacy "ambulancejob".
 
 ## Download & Installation
-
 
 ### Using Git:
 ```
