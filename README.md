@@ -6,6 +6,8 @@ Super simple hospital treatment resource utilizing qtarget & nh-context. This is
 
 ## Requirements
 
+- [ox_lib](https://github.com/overextended/ox_lib)
+
 - [qtarget](https://github.com/overextended/qtarget)
 
 - [nh-context](https://github.com/nighmares/nh-context)
