@@ -5,17 +5,17 @@ game         'gta5'
 
 -- Resource Information --
 name         'qphospital'
-author       'qpr' -- https://github.com/ohqpr
-version      '1.0.5'
-repository   'https://github.com/ohqpr/qphospital'
-description  'Hospital treatment resource utilizing qtarget & nh-context'
+author       'qpr'
+version      '1.1.0'
+repository   'https://github.com/KKasutaja/qphospital'
+description  'Hospital treatment resource utilizing ox_lib, ox_inventory, qtarget & nh-context'
 
 -- Manifest --
 dependencies {
   '/server:5181',
   '/onesync',
   'ox_lib',
-  'rprogress',
+  'ox_inventory',
   'qtarget',
   'nh-context'
 }

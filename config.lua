@@ -2,7 +2,7 @@ Config = {}
 
 Config.VersionCheck = true -- If set true, you'll get a print in server console when your resource is out of date and needs a update.
 
-Config.Debug = true -- Treatment test command (can be set below)
+Config.Debug = false -- Treatment test command (can be set below)
 Config.DebugCommand = 'treatmenttest' -- Here you can set a command for testing your hospital menu.
 
 -- Notification you will receive when you are bleeding and in need of treatment
@@ -21,10 +21,9 @@ Config.HealTime = 3
 
 Config.NPC = { -- NPC spawn location, model and hash
     {
-        coords  = vector3(311.57, -594.11, 43.28 - 0.99),
+        coords = vec3(311.57, -594.11, 43.28 - 0.99),
         heading = 0.5440,
-        hash    = 0xD47303AC,
-        model   = "s_m_m_doctor_01"
+        model = `s_m_m_doctor_01`
     }
 }
 
@@ -104,5 +103,5 @@ Config.Data = {
 Config.Beds = {
     1631638868, -- hospital xray bed
     2117668672, -- hospital catscan bed
-   -1519439119 -- hospital mri machine bed
+    -1519439119 -- hospital mri machine bed
 }
