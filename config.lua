@@ -2,7 +2,7 @@ Config = {}
 
 Config.VersionCheck = true -- If set true, you'll get a print in server console when your resource is out of date and needs a update.
 
--- Resource debug. Edit below the test command to receive treatment.
+-- Resource debug for client debug_print. Edit below the test command to receive treatment.
 Config.Debug = true
 Config.DebugCommand = 'treatmenttest' -- Here you can set a command for testing your hospital menu.
 
@@ -13,11 +13,11 @@ Config.Notification = 'You need medical attention!'
 -- If set to true edit 'Config.BillAmount' to your desired price for receiving treatment. If set false it will be free for everyone.
 Config.CostMoney = true
 
--- Cost to receive treatment
+-- Total cost to receive treatment
 Config.BillAmount = 500
 
 -- Choose for players to gain health when using qtarget to lay down in bed (got bored so why not).
--- If set to 0 this option will be disbaled. If set to 3 players will receive 1 health every 3 seconds while laying down in bed.
+-- If set to 0 this option will be disabled. If set to 3 players will receive 1 health every 3 seconds while laying down in bed.
 Config.HealTime = 3
 
 Config.NPC = { -- NPC spawn location & model.
@@ -39,7 +39,7 @@ Config.Animations = {
   }
 }
 
--- *DO NOT TOUCH UNLESS YOU KNO WHAT YOUR DOING*
+-- *DO NOT TOUCH UNLESS YOU KNOW WHAT YOUR DOING*
 Config.Data = {
     [96868307]   = {
         metadata = {0.0, 0.0, -0.4, 168.0}
@@ -100,7 +100,7 @@ Config.Data = {
     }
 }
 
--- *DO NOT TOUCH UNLESS YOU KNO WHAT YOUR DOING*
+-- *DO NOT TOUCH UNLESS YOU KNOW WHAT YOUR DOING*
 Config.Beds = {
     1631638868, -- hospital xray bed
     2117668672, -- hospital catscan bed
