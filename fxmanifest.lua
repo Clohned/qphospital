@@ -6,8 +6,8 @@ game         'gta5'
 -- Resource Information --
 name         'qphospital'
 author       'qpr'
-version      '1.1.0'
-repository   'https://github.com/KKasutaja/qphospital'
+version      '1.0.5'
+repository   'https://github.com/ohqpr/qphospital'
 description  'Hospital treatment resource utilizing ox_lib, ox_inventory, qtarget & nh-context'
 
 -- Manifest --
