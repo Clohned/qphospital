@@ -2,25 +2,24 @@ Config = {}
 
 Config.VersionCheck = true -- If set true, you'll get a print in server console when your resource is out of date and needs a update.
 
-Config.Debug = true -- Receieve treatment test command (change the command below to your liking) set false to disable it
-Config.DebugCommand = 'treatmenttest' -- The command you wish to use to test receiving treatment
+Config.Debug = true -- Treatment test command (can be set below)
+Config.DebugCommand = 'treatmenttest' -- Here you can set a command for testing your hospital menu.
 
 -- Notification you will receive when you are bleeding and in need of treatment
-Config.Notification = "You need medical attention!"
+Config.Notification = 'You need medical attention!'
 
 -- Choose to have players pay for receiving treatment
 -- If set to true edit 'Config.BillAmount' to your desired price for receiving treatment. If set false it will be free for everyone.
-Config.CostMoney  = true
+Config.CostMoney = true
 
--- Total cost to receive treatment in cash
+-- Cost to receive treatment
 Config.BillAmount = 500
 
 -- Choose for players to gain health when using qtarget to lay down in bed (got bored so why not)
--- If set 0 this option will be disbaled. If set 3 players will receive 1 health every 3 seconds while laying down in bed.
+-- If set to 0 this option will be disbaled. If set to 3 players will receive 1 health every 3 seconds while laying down in bed.
 Config.HealTime = 3
 
--- NPC spawn location/model & hash
-Config.NPC      = {
+Config.NPC = { -- NPC spawn location, model and hash
     {
         coords  = vector3(311.57, -594.11, 43.28 - 0.99),
         heading = 0.5440,
@@ -29,168 +28,79 @@ Config.NPC      = {
     }
 }
 
--- *DO NOT TOUCH UNLESS YOU KNOW WHAT YOUR DOING
-Config.Props  = {
-    sitonbed  = {anim = "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER"},
-    laydown   = {dict = "anim@gangops@morgue@table@", anim = "ko_front"},
-    smallcock = {anim = "WORLD_HUMAN_PICNIC"},
-    area      = {
-        [96868307] = {
-            object        = 96868307,
-            metadataone   = 0.0,
-            metadatatwo   = 0.0,
-            metadatathree = -0.4,
-            metadatafour  = 168.0,
-            bed           = false
-        },
-        [867556671] = {
-            object        = 867556671,
-            metadataone   = 0.0,
-            metadatatwo   = 0.0,
-            metadatathree = -0.4,
-            metadatafour  = 168.0,
-            bed           = false
-        },
-        [536071214] = {
-            object        = 536071214,
-            metadataone   = 0.0,
-            metadatatwo   = -0.1,
-            metadatathree = -0.5,
-            metadatafour  = 180.0,
-            bed           = false
-        },
-        [538002882] = {
-            object        = 538002882,
-            metadataone   = 0.0,
-            metadatatwo   = 0.0,
-            metadatathree = 0.1,
-            metadatafour  = 168.0,
-            bed           = false
-        },
-        [2117668672] = {
-            object        = 2117668672,
-            metadataone   = 0.0,
-            metadatatwo   = 0.0,
-            metadatathree = -1.4,
-            metadatafour  = 0.0,
-            bed           = true
-        },
-        [1631638868] = {
-            object        = 1631638868,
-            metadataone   = 0.0,
-            metadatatwo   = 0.0,
-            metadatathree = -1.4,
-            metadatafour  = 0.0,
-            bed           = true
-        },
-        [1268458364] = {
-            object        = 1268458364,
-            metadataone   = 0.0,
-            metadatatwo   = 0.0,
-            metadatathree = -0.4,
-            metadatafour  = 168.0,
-            bed           = false
-        },
-        [1037469683] = {
-            object        = 1037469683,
-            metadataone   = 0.0,
-            metadatatwo   = 0.0,
-            metadatathree = -0.4,
-            metadatafour  = 168.0,
-            bed           = false
-        },
-        [-992735415] = {
-            object        = -992735415,
-            metadataone   = 0.0,
-            metadatatwo   = -0.0,
-            metadatathree = 0.1,
-            metadatafour  = 180.0,
-            bed           = false
-        },
-        [-992710074] = {
-            object        = -992710074,
-            metadataone   = 0.0,
-            metadatatwo   = -0.1,
-            metadatathree = -0.7,
-            metadatafour  = 168.0,
-            bed           = false
-        },
-        [-171943901] = {
-            object        = -171943901,
-            metadataone   = 0.0,
-            metadatatwo   = 0.0,
-            metadatathree = -0.0,
-            metadatafour  = 168.0,
-            bed           = false
-        },
-        [-377849416] = {
-            object        = -377849416,
-            metadataone   = 0.0,
-            metadatatwo   = 0.0,
-            metadatathree = -0.4,
-            metadatafour  = 168.0,
-            bed           = false
-        },
-        [-109356459] = {
-            object        = -109356459,
-            metadataone   = 0.0,
-            metadatatwo   = 0.0,
-            metadatathree = -0.4,
-            metadatafour  = 168.0,
-            bed           = false
-        },
-        [-1519439119] = {
-            object        = -1519439119,
-            metadataone   = 0.0,
-            metadatatwo   = 0.0,
-            metadatathree = -2.0,
-            metadatafour  = 0.0,
-            bed           = true
-        },
-        [-1195678770] = {
-            object        = -1195678770,
-            metadataone   = 0.0,
-            metadatatwo   = -0.1,
-            metadatathree = -0.7,
-            metadatafour  = 5.0,
-            bed           = false
-        },
-        [-1091386327] = {
-            object        = -1091386327,
-            metadataone   = 0.0,
-            metadatatwo   = 0.13,
-            metadatathree = -0.2,
-            metadatafour  = 90.0,
-            bed           = false
-        },
-        [-1118419705] = {
-            object        = -1118419705,
-            metadataone   = 0.0,
-            metadatatwo   = -0.1,
-            metadatathree = -0.5,
-            metadatafour  = 168.0,
-            bed           = false
-        },
-        [-1761659350] = {
-            object        = -1761659350,
-            metadataone   = 0.0,
-            metadatatwo   = -0.0,
-            metadatathree = -0.5,
-            metadatafour  = 180.0,
-            bed           = false
-        },
-        [-1626066319] = {
-            object        = -1626066319,
-            metadataone   = 0.0,
-            metadatatwo   = -0.0,
-            metadatathree = 0.1,
-            metadatafour  = 180.0,
-            bed           = false
-        }
+Config.Animations = {
+    ['sit_down'] = {
+        dict = false,
+        anim = 'WORLD_HUMAN_PICNIC'
+    },
+    ['lay_down'] = {
+        dict = 'anim@gangops@morgue@table@',
+        anim = 'ko_front'
     }
 }
 
--- *DO NOT TOUCH UNLESS YOU KNOW WHAT YOUR DOING*
+-- DO NOT TOUCH UNLESS YOU KNOW WHAT YOUR DOING
+Config.Data = {
+    [96868307] = {
+        metadata = {0.0, 0.0, -0.4, 168.0}
+    },
+    [867556671] = {
+        metadata = {0.0, 0.0, -0.4, 168.0}
+    },
+    [536071214] = {
+        metadata = {0.0, -0.1, -0.5, 180.0}
+    },
+    [538002882] = {
+        metadata = {0.0, 0.0, 0.1, 168.0}
+    },
+    [2117668672] = {
+        metadata = {0.0, 0.0, -1.4, 0.0}
+    },
+    [1631638868] = {
+        metadata = {0.0, 0.0, -1.4, 0.0}
+    },
+    [1268458364] = {
+        metadata = {0.0, 0.0, -0.4, 168.0}
+    },
+    [1037469683] = {
+        metadata = {0.0, 0.0, -0.4, 168.0}
+    },
+    [-992735415] = {
+        metadata = {0.0, -0.0, 0.1, 180.0}
+    },
+    [-992710074] = {
+        metadata = {0.0, -0.1, -0.7, 168.0}
+    },
+    [-171943901] = {
+        metadata = {0.0, 0.0, -0.0, 168.0}
+    },
+    [-377849416] = {
+        metadata = {0.0, 0.0, -0.4, 168.0}
+    },
+    [-109356459] = {
+        metadata = {0.0, 0.0, -0.4, 168.0}
+    },
+    [-1519439119] = {
+        metadata = {0.0, 0.0, -2.0, 0.0}
+    },
+    [-1195678770] = {
+        metadata = {0.0, -0.1, -0.7, 5.0}
+    },
+    [-1091386327] = {
+        metadata = {0.0, 0.13, -0.2, 90.0},
+    },
+    [-1118419705] = {
+        metadata = {0.0, 0.1, -0.5, 168.0},
+    },
+    [-1761659350] = {
+        metadata = {0.0, -0.0, -0.5, 180.0},
+    },
+    [-1626066319] = {
+        metadata = {0.0, -0.0, 0.1, 180.0},
+    }
+}
+
+-- DO NOT TOUCH UNLESS YOU KNOW WHAT YOUR DOING
 Config.Beds = {
     1631638868, -- hospital xray bed
     2117668672, -- hospital catscan bed

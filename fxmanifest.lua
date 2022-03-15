@@ -5,8 +5,8 @@ game         'gta5'
 
 -- Resource Information --
 name         'qphospital'
-author       'qpr'
-version      '1.0.4'
+author       'qpr' -- https://github.com/ohqpr
+version      '1.0.5'
 repository   'https://github.com/ohqpr/qphospital'
 description  'Hospital treatment resource utilizing qtarget & nh-context'
 
@@ -14,12 +14,14 @@ description  'Hospital treatment resource utilizing qtarget & nh-context'
 dependencies {
   '/server:5181',
   '/onesync',
-  'qtarget',
+  'ox_lib',
   'rprogress',
+  'qtarget',
   'nh-context'
 }
 
 shared_scripts {
+  '@ox_lib/init.lua',
   '@es_extended/imports.lua',
   'config.lua'
 }
