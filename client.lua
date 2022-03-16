@@ -111,7 +111,7 @@ if Config.CostMoney then
   lib.callback('qphospital:signIn', false, function(response)
     if response then
         debug_print('You have been billed $' .. Config.BillAmount)
-        exports.ox_inventory:notify({type = 'ifno', text = 'You have been billed $' .. Config.BillAmount, duration = 2500})
+        exports.ox_inventory:notify({type = 'info', text = 'You have been billed $' .. Config.BillAmount, duration = 2500})
         getTreatment(); spawnNurse()
     elseif not response then
         debug_print('You need $' .. Config.BillAmount .. ' in order to get treated.')
