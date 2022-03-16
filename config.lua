@@ -20,7 +20,7 @@ Config.BillAmount = 500
 -- If set to 0 this option will be disabled. If set to 3 players will receive 1 health every 3 seconds while laying down in bed.
 Config.HealTime = 3
 
-Config.NPC = { -- NPC spawn location & model.
+Config.NPC      = { -- NPC spawn location & model.
     {
         coords  = vec3(311.57, -594.11, 43.28 - 0.99),
         heading = 0.5440,
@@ -29,18 +29,18 @@ Config.NPC = { -- NPC spawn location & model.
 }
 
 Config.Animations = {
-  ['sit_down'] = {
-      dict     = false,
-      anim     = 'WORLD_HUMAN_PICNIC'
+  ['sit_down']    = {
+      dict        = false,
+      anim        = 'WORLD_HUMAN_PICNIC'
   },
-  ['lay_down'] = {
-      dict     = 'anim@gangops@morgue@table@',
-      anim     = 'ko_front'
+  ['lay_down']    = {
+      dict        = 'anim@gangops@morgue@table@',
+      anim        = 'ko_front'
   }
 }
 
 -- *DO NOT TOUCH UNLESS YOU KNOW WHAT YOUR DOING*
-Config.Data = {
+Config.Data      = {
     [96868307]   = {
         metadata = {0.0, 0.0, -0.4, 168.0}
     },
@@ -103,6 +103,5 @@ Config.Data = {
 -- *DO NOT TOUCH UNLESS YOU KNOW WHAT YOUR DOING*
 Config.Beds = {
     1631638868, -- hospital xray bed
-    2117668672, -- hospital catscan bed
-   -1519439119  -- hospital mri machine bed
+    2117668672 -- hospital catscan bed
 }
