@@ -7,12 +7,6 @@ local function debug_print(msg)
   end
 end
 
-local function showAlert(text)
-  SetNotificationTextEntry("STRING")
-  AddTextComponentString(text)
-  DrawNotification(false, false)
-end
-
 local function treatmentInProgress()
   SetEntityCoords(cache.ped, 317.88, -585.21, 44.22 + 0.3)
   lib.requestAnimDict('anim@gangops@morgue@table@')
@@ -55,7 +49,7 @@ local function startBleedingEffect()
     bleeding = true
   end
 
-    showAlert(Config.Notification)
+    exports.ox_inventory:notify({type = 'info', text = Config.Notification, duration = 4500})
     ShakeGameplayCam('SMALL_EXPLOSION_SHAKE', 1.0)
     SetPlayerHealthRechargeMultiplier(PlayerId(), 0.0)
   end
