@@ -1,8 +1,8 @@
 ## qphospital (WIP)
 
-Super simple hospital treatment resource utilizing ox_lib, ox_inventory, qtarget & nh-context This is still a work in progress and contains some test code (ex. Debug event).
+Super simple hospital treatment resource utilizing ox_lib, ox_inventory, qtarget & nh-context. This is still a work in progress and contains some test code (ex. Debug event).
 
-[Preview Video](https://www.youtube.com/watch?v=0P8G-Oqh1WM)
+[Preview Video](https://www.youtube.com/watch?v=4QOwcOOikRg)
 
 ## Requirements
 
@@ -14,7 +14,7 @@ Super simple hospital treatment resource utilizing ox_lib, ox_inventory, qtarget
 
 - [nh-context](https://github.com/nerohiro/nh-context)
 
-- [esx_ambulancejob](https://github.com/overextended/esx-legacy/tree/main/%5Besx_addons%5D/esx_ambulancejob) --> This was made and tested utilizing Linden's ESX Legacy "ambulancejob".
+- [esx_ambulancejob](https://github.com/esx-framework/esx-legacy/tree/main/%5Besx_addons%5D/esx_ambulancejob)
 
 ## Download & Installation
 
